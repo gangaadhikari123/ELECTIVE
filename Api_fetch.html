@@ -1,0 +1,17 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Dynamic Example</title></head>
+<body>
+  <h1>Random Joke:</h1>
+  <p id="joke">Loading...</p>
+
+  <script>
+    fetch('https://official-joke-api.appspot.com/random_joke')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('joke').textContent = data.setup + ' - ' + data.punchline;
+      });
+  </script>
+</body>
+</html>
